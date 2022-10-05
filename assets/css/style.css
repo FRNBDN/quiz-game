@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Coiny&family=Heebo&family=Zen+Tokyo+Zoo&display=swap');
+/*Global Settings*/
+*{
+    margin:0;
+    padding: 0;
+    border:none;
+    text-decoration: none;
+  }
+/*Main Container code*/
+.container{
+    background-color: #FFFFFF;
+    color: #2C2C2C;
+
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+#logo{
+    font-family: 'Zen Tokyo Zoo', sans-serif;
+    text-align: center;
+    font-size: 15vw;
+    
+    background-color: yellow;
+}
+
+.flag-area{
+    background-color: red;
+}
+
+.answer-container{
+    background-color: blue;
+}
+
+.score-area{
+    background-color: green;
+}
