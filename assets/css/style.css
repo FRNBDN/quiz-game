@@ -24,8 +24,14 @@
     font-size: 16vw;
 }
 /*game board styles*/
+
 .flag-area{
-    width: 80%;
+    display: flex;
+    justify-content: center;
+}
+
+#flag-img{
+    width: 90%;
     height: auto;
 }
 
