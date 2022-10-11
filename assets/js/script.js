@@ -206,7 +206,7 @@ const countryList =[
 let countriesPicked = [];
 let pickCheck = [];
 while (pickCheck.length < 4){
-let pick = drawRandom(countryList.length);
+let pick = drawRandom(countryList.length-1);
  console.log(pick);
  let country= {
     country : countryList[pick].country,
@@ -237,23 +237,19 @@ function countryCheck(){
     return answerOptions
       
 }
-
+// draws the countries and validates them.
 function gameDraw (){
     let drawnCountries = countryCheck();
     let buttons = document.getElementsByClassName("answer");
     console.log(buttons);
+    console.log(drawnCountries);
+    let img = drawnCountries.find(drawnCountries=>drawnCountries.corr === 1);
+    console.log(img);
+    document.getElementById("flag-img").src=`https://flagcdn.com/${img.iso.toLowerCase()}.svg`;
     for (let i = 0 ; i<drawnCountries.length; i++){
-        let corr = drawnCountries.some(drawnCountries=>drawnCountries.corr === 1);
-        if (corr) {
-            document.getElementById("flag-img").src=`https://flagcdn.com/${drawnCountries[i].iso.toLowerCase()}.svg`;
-        }
-        buttons[i].innerText = drawnCountries[i].country;
-        
+    buttons[i].innerText = drawnCountries[i].country; 
     }
 }
-//function for if the draw passes - 
-// changes src of the img tag
-// changes src + value of the buttons.
 
 //Function that checks if answer is correct
 // matches value of button pressed  
