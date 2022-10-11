@@ -1,6 +1,20 @@
+document.addEventListener("DOMContentLoaded", function(){
+    let buttons = document.getElementsByTagName('button');
+    for (let button of buttons) {
+        button.addEventListener('click', function(){
+            if(this.getAttribute('id')=== 'correct'){
+                correctBtnPress();
+            }
+            else{
+                wrongBtnPress();
+            }
+        })
+    }
+
+})
 //list of previous countries used as correct answers.
 const previousCorrectAnswers = [];
-  
+
 function drawRandom(maxValue){
     let randomNum = Math.round(Math.random()*maxValue);
     return randomNum;
@@ -219,6 +233,7 @@ if(pickCheck.indexOf(pick)=== -1){
 }
 }
 return countriesPicked;
+console.log(countriesPicked);
 }
 
 // Function that assign correct answer + adds it to the list of already
@@ -245,24 +260,37 @@ function gameDraw (){
     console.log(drawnCountries);
     let img = drawnCountries.find(drawnCountries=>drawnCountries.corr === 1);
     console.log(img);
-    document.getElementById("flag-img").src=`https://flagcdn.com/${img.iso.toLowerCase()}.svg`;
+    document.getElementById("flag-area").innerHTML= `<img id="flag-img" src="https://flagcdn.com/${img.iso.toLowerCase()}.svg" alt="Flag Image"></img>`;
+    
     for (let i = 0 ; i<drawnCountries.length; i++){
-    buttons[i].innerText = drawnCountries[i].country; 
+    buttons[i].innerText = drawnCountries[i].country;
+    if(img.country === drawnCountries[i].country){
+     buttons[i].setAttribute('id', "correct");
+    }
     }
 }
 
-//Function that checks if answer is correct
-// matches value of button pressed  
-// + value of correct answer
+function correctBtnPress (){
+    console.log("you're right!");
+// button turns green for .5sec
+// adds a +1 to right and total/10
+// calculates %
+// fetches another question
+}
 
-//Function that runs if it is correct
-// adds a + in right + tot, recalculates the %
-// highligts right answer in green, blinking
+function wrongBtnPress (){
+    console.log("you're wrong!");
+// correct blinks green
+// clicked turns red
+// adds a +1 to wrong and total/10
+// calculates %
+// fetches another question
+}
 
-//fucntion that runs if its not correct
-// adds a + in wrong + tot, recalculates the %
-// highlight right answer in green + user wrong answer 
-// in red
-
+function gameOver(){
+ //when counter is >10
+ // removes gameboard and only shows stats
+ // share button
+}
 // Function that sees if the share button is clicked
 // copies scores + link to game to clipboard
