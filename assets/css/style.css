@@ -28,6 +28,8 @@
 #flag-area{
     display: flex;
     justify-content: center;
+    background-color: #DCDCDC;
+    padding: 1px 0px;
 }
 
 #flag-img{

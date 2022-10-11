@@ -14,9 +14,12 @@ document.addEventListener("DOMContentLoaded", function(){
 })
 //list of previous countries used as correct answers.
 const previousCorrectAnswers = [];
+var right = 0;
+var wrong = 0;
+var tot = 0;
 
 function drawRandom(maxValue){
-    let randomNum = Math.round(Math.random()*maxValue);
+    let randomNum = Math.round(Math.random()*(maxValue-1));
     return randomNum;
 }
 // Draws 4 countries
@@ -220,8 +223,7 @@ const countryList =[
 let countriesPicked = [];
 let pickCheck = [];
 while (pickCheck.length < 4){
-let pick = drawRandom(countryList.length-1);
- console.log(pick);
+let pick = drawRandom(countryList.length);
  let country= {
     country : countryList[pick].country,
     iso : countryList[pick].iso,
@@ -232,8 +234,8 @@ if(pickCheck.indexOf(pick)=== -1){
     countriesPicked.push(country);
 }
 }
+
 return countriesPicked;
-console.log(countriesPicked);
 }
 
 // Function that assign correct answer + adds it to the list of already
@@ -242,6 +244,7 @@ console.log(countriesPicked);
 function countryCheck(){
     let answerOptions = countryPicker();
     let correctAnswer = drawRandom(4);
+    console.log(correctAnswer);
     let wasUsed = previousCorrectAnswers.some(previousCorrectAnswers=>previousCorrectAnswers.country!==answerOptions[correctAnswer].country);
     while (wasUsed) {
         correctAnswer = drawRandom(4);
@@ -249,13 +252,13 @@ function countryCheck(){
     previousCorrectAnswers.push(answerOptions[correctAnswer]);
     answerOptions[correctAnswer].corr = 1; 
     
-    return answerOptions
-      
+    return answerOptions;
 }
 // draws the countries and validates them.
 function gameDraw (){
     let drawnCountries = countryCheck();
     let buttons = document.getElementsByClassName("answer");
+    buttons.innerText= '';
     console.log(buttons);
     console.log(drawnCountries);
     let img = drawnCountries.find(drawnCountries=>drawnCountries.corr === 1);
@@ -271,9 +274,11 @@ function gameDraw (){
 }
 
 function correctBtnPress (){
-    console.log("you're right!");
+  console.log("you're right!");
+  right += 1;
+  tot += 1;
+  let newPerc = calcPerc();
 // button turns green for .5sec
-// adds a +1 to right and total/10
 // calculates %
 // fetches another question
 }
@@ -294,3 +299,7 @@ function gameOver(){
 }
 // Function that sees if the share button is clicked
 // copies scores + link to game to clipboard
+
+function calcPerc(){
+    return right/tot;
+}
