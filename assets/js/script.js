@@ -233,11 +233,24 @@ function countryCheck(){
     }
     previousCorrectAnswers.push(answerOptions[correctAnswer]);
     answerOptions[correctAnswer].corr = 1; 
-
+    
     return answerOptions
       
 }
 
+function gameDraw (){
+    let drawnCountries = countryCheck();
+    let buttons = document.getElementsByClassName("answer");
+    console.log(buttons);
+    for (let i = 0 ; i<drawnCountries.length; i++){
+        let corr = drawnCountries.some(drawnCountries=>drawnCountries.corr === 1);
+        if (corr) {
+            document.getElementById("flag-img").src=`https://flagcdn.com/${drawnCountries[i].iso.toLowerCase()}.svg`;
+        }
+        buttons[i].innerText = drawnCountries[i].country;
+        
+    }
+}
 //function for if the draw passes - 
 // changes src of the img tag
 // changes src + value of the buttons.
