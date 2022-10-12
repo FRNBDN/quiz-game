@@ -28,13 +28,17 @@
 #flag-area{
     width: 100%;
     display: flex;
+    height: 35vh;
     justify-content: center;
+    align-items: center;
     background-color: #DCDCDC;
     padding: 1px 0px;
 }
 
 #flag-img{
-    width: 90%;
+    max-width: 98%;
+    max-height: 80%;
+    width: auto;
     height: auto;
 }
 
@@ -63,7 +67,6 @@ box-shadow: 0 5px 5px 0 #DCDCDC;
 }
 #start, #reset{
     font-family: 'Zen Tokyo Zoo', sans-serif;
-    height: 10vh;
     width: 30%;
     border-radius: 10px;
     margin: 10% 5%;
