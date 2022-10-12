@@ -9,6 +9,9 @@ document.addEventListener("DOMContentLoaded", function(){
             }
             else if(this.getAttribute('id')=== 'start'){
                 gameDraw();
+                document.getElementById('start-screen').style.display = "none";
+                document.getElementById('flag-img').style.display = "inline-block";
+                document.getElementById('answer-container').style.display = "flex";
             }
             else if(this.getAttribute('id')=== 'reset'){
                 console.log('scores resets');
@@ -268,7 +271,7 @@ function gameDraw (){
     let buttons = document.getElementsByClassName("answer");
     buttons.innerText= '';
     let img = drawnCountries.find(drawnCountries=>drawnCountries.corr === 1);
-    document.getElementById("flag-area").innerHTML= `<img id="flag-img" src="https://flagcdn.com/${img.iso.toLowerCase()}.svg" alt="Flag Image"></img>`;
+    document.getElementById("flag-img").src = `https://flagcdn.com/${img.iso.toLowerCase()}.svg`;
     
     for (let i = 0 ; i<drawnCountries.length; i++){
     buttons[i].innerText = drawnCountries[i].country;
@@ -311,8 +314,8 @@ function wrongBtnPress (){
 }
 
 function gameOver(){
-document.getElementById('flag-area').innerHTML=`<button id="start">START</button>
- <button id="reset">RESET HISTORY</button>`;
+document.getElementById('flag-img').style.display="none";
+document.getElementById('start-screen').style.display = "flex";
  countryList =[
     {country:'Afghanistan', iso: 'AF'},
     {country:'Albania', iso: 'AL'},
@@ -509,8 +512,7 @@ document.getElementById('flag-area').innerHTML=`<button id="start">START</button
     {country:'Zimbabwe', iso: 'ZW'},
 ];
 document.getElementById("answer-container").style.display="none";
-// Function that sees if the share button is clicked
-// copies scores + link to game to clipboard
+scoresObj = {right: 0,wrong: 0,tot: 0,};
 }
 
 
