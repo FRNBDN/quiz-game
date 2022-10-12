@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function(){
                 document.getElementById('answer-container').style.display = "flex";
             }
             else if(this.getAttribute('id')=== 'reset'){
-                console.log('scores resets');
+                resetScoreboard();
             }
             else{
                 wrongBtnPress();
@@ -223,7 +223,7 @@ let countryList =[
 ]; 
 let roundLimit = 20;
 let scoresObj = {right: 0,wrong: 0,tot: 0,};
-let timesPlayed = 1;
+let attempt = 1;
 
 
 function drawRandom(maxValue){
@@ -532,11 +532,16 @@ function eraseButtonId(){
 }
 
 function printScore(){
-    let div = document.getElementById('prev-scores')
+    let div = document.getElementById('prev-scores');
     let newperc = calcPerc();
-    div.innerHTML+=`<p>Attempt${timesPlayed}: Right: <span class="green">${scoresObj.right}</span>
+    div.innerHTML+=`<p>Attempt${attempt}: Right: <span class="green">${scoresObj.right}</span>
     Wrong: <span class="red">${scoresObj.wrong}</span>
    Average: <span >${newperc}%</span></p>`;
-    timesPlayed ++;
+    attempt ++;
 
+}
+function resetScoreboard(){
+    let div = document.getElementById('prev-scores');
+    div.innerHTML = '';
+    attempt = 1;
 }
