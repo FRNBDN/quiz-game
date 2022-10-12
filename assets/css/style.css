@@ -87,14 +87,14 @@ box-shadow: 0 5px 5px 0 #DCDCDC;
 }
 
 /*score stats styling*/
-.score-area{
+.score-area {
     width: 100%;
     display: flex;
     flex-wrap: nowrap;
     flex-direction: row;
     justify-content: space-evenly;
 }
-.scores {
+.scores, #prev-scores{
     font-family: 'Coiny', cursive;
     font-size: 3vw;
     display: flex;
@@ -115,4 +115,14 @@ box-shadow: 0 5px 5px 0 #DCDCDC;
     align-items: center;
     background-color: #DCDCDC;
     padding: 1px 0px;
+}
+#prev-scores p {
+    word-spacing:5vw;
+    font-size: 15wv;
+}
+.red{
+    color: #D62A2A;
+}
+.green{
+    color: #40D629;
 }

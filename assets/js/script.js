@@ -223,6 +223,7 @@ let countryList =[
 ]; 
 let roundLimit = 20;
 let scoresObj = {right: 0,wrong: 0,tot: 0,};
+let timesPlayed = 1;
 
 
 function drawRandom(maxValue){
@@ -512,7 +513,10 @@ document.getElementById('start-screen').style.display = "flex";
     {country:'Zimbabwe', iso: 'ZW'},
 ];
 document.getElementById("answer-container").style.display="none";
+printScore();
 scoresObj = {right: 0,wrong: 0,tot: 0,};
+
+
 }
 
 
@@ -525,4 +529,14 @@ function eraseButtonId(){
    for (let button of buttons) {
         button.removeAttribute('id');
    }
+}
+
+function printScore(){
+    let div = document.getElementById('prev-scores')
+    let newperc = calcPerc();
+    div.innerHTML+=`<p>Attempt${timesPlayed}: Right: <span class="green">${scoresObj.right}</span>
+    Wrong: <span class="red">${scoresObj.wrong}</span>
+   Average: <span >${newperc}%</span></p>`;
+    timesPlayed ++;
+
 }
