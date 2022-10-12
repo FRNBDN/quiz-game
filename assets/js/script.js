@@ -24,7 +24,6 @@ document.addEventListener("DOMContentLoaded", function(){
 })
 //list of previous countries used as correct answers.
 // and global variables
-//const previousCorrectAnswers = [];
 
 let countryList =[
     {country:'Afghanistan', iso: 'AF'},
