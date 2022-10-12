@@ -26,6 +26,7 @@
 /*game board styles*/
 
 #flag-area{
+    width: 100%;
     display: flex;
     justify-content: center;
     background-color: #DCDCDC;
@@ -36,6 +37,8 @@
     width: 90%;
     height: auto;
 }
+
+
 
 .answer-container{
     width: 100%;
@@ -48,7 +51,7 @@
     align-items: center;
 }
 /* buttons */
-.answer{
+button {
 font-family: 'Heebo', sans-serif;
 height: 30%;
 width: 45%;
@@ -58,9 +61,26 @@ margin: 1%;
 background-color: #FFFFFF;
 box-shadow: 0 5px 5px 0 #DCDCDC;
 }
+#start, #reset{
+    font-family: 'Zen Tokyo Zoo', sans-serif;
+    height: 10vh;
+    width: 30%;
+    border-radius: 10px;
+    margin: 10% 5%;
+    font-size: xx-large;
 
-.answer:hover, .answer:focus{
+    background-color: #FFFFFF;
+    box-shadow: 0 5px 5px 0 #DCDCDC;
+}
+#reset{
+    font-size: medium;
+}
+
+.answer:hover{
     box-shadow: 0 5px 5px 0 #8ce1f6;
+}
+#flag-area button:hover{
+    box-shadow: 0 5px 5px 0 #2C2C2C;
 }
 
 /*score stats styling*/

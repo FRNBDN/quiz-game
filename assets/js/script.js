@@ -5,6 +5,12 @@ document.addEventListener("DOMContentLoaded", function(){
             if(this.getAttribute('id')=== 'correct'){
                 correctBtnPress();
             }
+            else if(this.getAttribute('id')=== 'start'){
+                gameDraw();
+            }
+            else if(this.getAttribute('id')=== 'reset'){
+                console.log('scores resets');
+            }
             else{
                 wrongBtnPress();
             }
@@ -17,9 +23,11 @@ const previousCorrectAnswers = [];
 var right = 0;
 var wrong = 0;
 var tot = 0;
+var roundLimit = 20;
 
 function drawRandom(maxValue){
     let randomNum = Math.round(Math.random()*(maxValue-1));
+    console.log('random num complete!');
     return randomNum;
 }
 // Draws 4 countries
@@ -234,7 +242,7 @@ if(pickCheck.indexOf(pick)=== -1){
     countriesPicked.push(country);
 }
 }
-
+console.log('countrypick complete!');
 return countriesPicked;
 }
 
@@ -244,14 +252,14 @@ return countriesPicked;
 function countryCheck(){
     let answerOptions = countryPicker();
     let correctAnswer = drawRandom(4);
-    console.log(correctAnswer);
+    console.log('correct answer is chosen');
     let wasUsed = previousCorrectAnswers.some(previousCorrectAnswers=>previousCorrectAnswers.country!==answerOptions[correctAnswer].country);
     while (wasUsed) {
         correctAnswer = drawRandom(4);
     }
     previousCorrectAnswers.push(answerOptions[correctAnswer]);
     answerOptions[correctAnswer].corr = 1; 
-    
+    console.log('contrycheck complete!');
     return answerOptions;
 }
 // draws the countries and validates them.
@@ -271,6 +279,7 @@ function gameDraw (){
      buttons[i].setAttribute('id', "correct");
     }
     }
+    console.log('gameDraw complete!');
 }
 
 function correctBtnPress (){
@@ -278,13 +287,22 @@ function correctBtnPress (){
   right += 1;
   tot += 1;
   let newPerc = calcPerc();
+    document.getElementById('correct').innerText= right;
+    document.getElementById('total').innerText= `${tot}/${roundLimit}`;
+    document.getElementById('average').innerText= `${newPerc}%`;
 // button turns green for .5sec
 // calculates %
-// fetches another question
+    gameDraw();
 }
 
 function wrongBtnPress (){
     console.log("you're wrong!");
+    wrong += 1;
+    tot += 1;
+    let newPerc = calcPerc();
+      document.getElementById('incorrect').innerText= wrong;
+      document.getElementById('total').innerText= `${tot}/${roundLimit}`;
+      document.getElementById('average').innerText= `${newPerc}%`;
 // correct blinks green
 // clicked turns red
 // adds a +1 to wrong and total/10
