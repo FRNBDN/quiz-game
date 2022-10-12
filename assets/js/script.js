@@ -507,11 +507,11 @@ document.getElementById('flag-area').innerHTML=`<button id="start">START</button
     {country:'Yemen', iso: 'YE'},
     {country:'Zambia', iso: 'ZM'},
     {country:'Zimbabwe', iso: 'ZW'},
-];  
-set
-}
+];
+document.getElementById("answer-container").style.display="none";
 // Function that sees if the share button is clicked
 // copies scores + link to game to clipboard
+}
 
 
 function calcPerc(){
