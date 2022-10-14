@@ -222,7 +222,7 @@ body{
         font-size: 20px;
     }
 }
-@media (hover: hover) and (pointer: fine) { 
+@media (hover: none) and (pointer: coarse){ 
     .x:hover{
         color: #2C2C2C;
     }
