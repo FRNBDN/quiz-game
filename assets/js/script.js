@@ -20,6 +20,9 @@ document.addEventListener("DOMContentLoaded", function(){
             else if(this.getAttribute('id')=== 'instructions'){
                 instructionPopUp();
             }
+            else if(this.getAttribute('class')=== 'x'){
+                document.getElementsByClassName('inst-outer')[0].style.display='none';
+            }
             else{
                 wrongBtnPress();
             }
@@ -560,4 +563,8 @@ function resetScoreboard(){
     document.getElementById('wrong').innerText= `0`;
     document.getElementById('total').innerText= `0/${roundLimit}`;
     document.getElementById('average').innerText= `N/A`;
+}
+
+function instructionPopUp(){
+    document.getElementsByClassName('inst-outer')[0].style.display='block';
 }
