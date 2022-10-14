@@ -27,6 +27,7 @@
 
 #flag-area{
     width: 100%;
+    min-height: 260px;
     max-height: 350px;
     display: flex;
     justify-content: center;
@@ -82,12 +83,6 @@ box-shadow: 0 5px 5px 0 #DCDCDC;
     min-height: 65px;
 }
 
-.answer:hover{
-    box-shadow: 0 5px 5px 0 #8ce1f6;
-}
-#flag-area button:hover{
-    box-shadow: 0 5px 5px 0 #2C2C2C;
-}
 
 /*score stats styling*/
 .score-area {
@@ -194,9 +189,7 @@ box-shadow: 0 5px 5px 0 #DCDCDC;
     width: auto;
     box-shadow: none;
 }
-.x:hover{
-    color: #2C2C2C;
-}
+
 body{
     display: flex;
     flex-wrap: wrap;
@@ -229,5 +222,17 @@ body{
         font-size: 20px;
     }
 }
+@media (hover: hover) {
+    .x:hover{
+        color: #2C2C2C;
+    }
+    .answer:hover{
+        box-shadow: 0 5px 5px 0 #8ce1f6;
+    }
+    #flag-area button:hover{
+        box-shadow: 0 5px 5px 0 #2C2C2C;
+    }
+    
+  }
     
 

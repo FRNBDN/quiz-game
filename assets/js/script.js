@@ -24,6 +24,9 @@ document.addEventListener("DOMContentLoaded", function(){
             else if(this.getAttribute('class')=== 'x'){
                 document.getElementsByClassName('inst-outer')[0].style.display='none';
             }
+            else if (this.getAttribute('class')=== 'refresh'){
+                reload();
+            }
             else{
                 this.setAttribute('id', 'incorrect');
                 if (buttonsOn){wrongBtnPress();}
