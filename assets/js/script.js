@@ -24,7 +24,9 @@ document.addEventListener("DOMContentLoaded", function(){
                 document.getElementsByClassName('inst-outer')[0].style.display='none';
             }
             else{
+                this.setAttribute('id', 'incorrect');
                 wrongBtnPress();
+                
             }
         })
     }
@@ -273,7 +275,7 @@ function gameDraw (){
     scores[0].innerText=scoresObj.right;
     scores[1].innerText=scoresObj.wrong;
     scores[2].innerText=`${scoresObj.tot}/${roundLimit}`;
-    
+    eraseButtonId();
     if(scoresObj.tot < roundLimit){
     let drawnCountries = countryCheck();
     let buttons = document.getElementsByClassName("answer");
@@ -301,13 +303,16 @@ function correctBtnPress (){
     document.getElementById("right").innerText= scoresObj.right;
     document.getElementById('total').innerText=`${scoresObj.tot}/${roundLimit}`;
     document.getElementById('average').innerText= `${newPerc}%`;
-    eraseButtonId();
-    gameDraw();
+    document.getElementById('correct').style.backgroundColor = "#40D629";
+    setTimeout(function() {gameDraw();} ,1000);
+    
 }
 
 function wrongBtnPress (){
     scoresObj.wrong ++;
     scoresObj.tot ++;
+    document.getElementById('correct').style.backgroundColor = "#40D629";
+    document.getElementById('incorrect').style.backgroundColor = "#D62A2A";
     let newPerc = calcPerc();
       document.getElementById('wrong').innerText= scoresObj.wrong;
       document.getElementById('total').innerText= `${scoresObj.tot}/${roundLimit}`;
@@ -317,8 +322,7 @@ function wrongBtnPress (){
 // adds a +1 to wrong and total/10
 // calculates %
 // fetches another question
-    eraseButtonId();
-    gameDraw();
+    setTimeout(function() {gameDraw();} ,1000); 
 }
 
 function gameOver(){
@@ -535,7 +539,9 @@ function eraseButtonId(){
    let buttons =  document.getElementsByClassName("answer");
    for (let button of buttons) {
         button.removeAttribute('id');
+        button.style.backgroundColor="#FFFFFF";
    }
+   
 }
 
 function printScore(){
