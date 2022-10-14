@@ -539,7 +539,7 @@ function eraseButtonId(){
 }
 
 function printScore(){
-    if(attempt <= 3){
+    if(attempt <= 20){
     let div = document.getElementById('prev-scores');
     let newperc = calcPerc();
     scoreList.push(div.innerHTML+=` 
@@ -552,7 +552,7 @@ function printScore(){
     attempt ++;
     }
     else{
-        //
+        //Needs a prompt
     }
 }
 function resetScoreboard(){
