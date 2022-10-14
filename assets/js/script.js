@@ -17,6 +17,9 @@ document.addEventListener("DOMContentLoaded", function(){
             else if(this.getAttribute('id')=== 'reset'){
                 resetScoreboard();
             }
+            else if(this.getAttribute('id')=== 'instructions'){
+                instructionPopUp();
+            }
             else{
                 wrongBtnPress();
             }
@@ -533,17 +536,21 @@ function eraseButtonId(){
 }
 
 function printScore(){
+    if(attempt <= 3){
     let div = document.getElementById('prev-scores');
     let newperc = calcPerc();
     scoreList.push(div.innerHTML+=` 
     <div class = "s-line">
-        <div>Attempt: ${attempt}</div>
+        <div>Round: ${attempt}</div>
         <div>Right: <span class="green">${scoresObj.right}</span></div>
         <div>Wrong: <span class="red">${scoresObj.wrong}</span></div>
         <div>Average: ${newperc}%</div>
     </div>`);
     attempt ++;
-
+    }
+    else{
+        //
+    }
 }
 function resetScoreboard(){
     let div = document.getElementById('prev-scores');
