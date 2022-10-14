@@ -95,13 +95,20 @@ box-shadow: 0 5px 5px 0 #DCDCDC;
     justify-content: space-evenly;
 }
 .scores, #prev-scores{
+    width: 100%;
     font-family: 'Coiny', cursive;
     font-size: 3vw;
     display: flex;
     flex-wrap: nowrap;
-    flex-direction: column;
     justify-content: space-evenly;
+}
+.scores{
+    flex-direction: column;
     align-items: center;
+}
+#prev-scores{
+    flex-direction: column-reverse;
+    align-items: stretch;
 }
 /*stats numbers*/
 .scores span{
@@ -116,9 +123,11 @@ box-shadow: 0 5px 5px 0 #DCDCDC;
     background-color: #DCDCDC;
     padding: 1px 0px;
 }
-#prev-scores p {
-    word-spacing:5vw;
+#prev-scores .s-line {
     border-bottom: #2C2C2C 1px solid;
+    display: flex;
+    justify-content: space-between;
+    margin: 0px 1%;
 }
 .red{
     color: #D62A2A;

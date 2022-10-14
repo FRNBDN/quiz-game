@@ -221,6 +221,7 @@ let countryList =[
     {country:'Zambia', iso: 'ZM'},
     {country:'Zimbabwe', iso: 'ZW'},
 ]; 
+let scoreList = [];
 let roundLimit = 20;
 let scoresObj = {right: 0,wrong: 0,tot: 0,};
 let attempt = 1;
@@ -534,9 +535,13 @@ function eraseButtonId(){
 function printScore(){
     let div = document.getElementById('prev-scores');
     let newperc = calcPerc();
-    div.innerHTML+=`<p>Attempt${attempt}: Right: <span class="green">${scoresObj.right}</span>
-    Wrong: <span class="red">${scoresObj.wrong}</span>
-   Average: <span >${newperc}%</span></p>`;
+    scoreList.push(div.innerHTML+=` 
+    <div class = "s-line">
+        <div>Attempt: ${attempt}</div>
+        <div>Right: <span class="green">${scoresObj.right}</span></div>
+        <div>Wrong: <span class="red">${scoresObj.wrong}</span></div>
+        <div>Average: ${newperc}%</div>
+    </div>`);
     attempt ++;
 
 }
