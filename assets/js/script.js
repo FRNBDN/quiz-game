@@ -12,6 +12,7 @@ document.addEventListener("DOMContentLoaded", function(){
                 document.getElementById('start-screen').style.display = "none";
                 document.getElementById('flag-img').style.display = "inline-block";
                 document.getElementById('answer-container').style.display = "flex";
+                document.getElementById('average').innerText= `N/A`;
             }
             else if(this.getAttribute('id')=== 'reset'){
                 resetScoreboard();
