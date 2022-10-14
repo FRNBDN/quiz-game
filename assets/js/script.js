@@ -550,7 +550,7 @@ function printScore(){
     let newperc = calcPerc();
     scoreList.push(div.innerHTML+=` 
     <div class = "s-line">
-        <div>Round: ${attempt}</div>
+        <div>Round${attempt}</div>
         <div>Right: <span class="green">${scoresObj.right}</span></div>
         <div>Wrong: <span class="red">${scoresObj.wrong}</span></div>
         <div>Average: ${newperc}%</div>
