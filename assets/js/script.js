@@ -543,4 +543,8 @@ function resetScoreboard(){
     let div = document.getElementById('prev-scores');
     div.innerHTML = '';
     attempt = 1;
+    document.getElementById('right').innerText= `0`;
+    document.getElementById('wrong').innerText= `0`;
+    document.getElementById('total').innerText= `0/${roundLimit}`;
+    document.getElementById('average').innerText= `N/A`;
 }
