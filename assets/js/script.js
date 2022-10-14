@@ -1,11 +1,12 @@
-
+let buttonsOn=true;
 document.addEventListener("DOMContentLoaded", function(){
-    
     let buttons = document.getElementsByTagName('button');
     for (let button of buttons) {
         button.addEventListener('click', function(){
+            
             if(this.getAttribute('id')=== 'correct'){
-                correctBtnPress();
+                if (buttonsOn){correctBtnPress();}
+                buttonsOn=false;
             }
             else if(this.getAttribute('id')=== 'start'){
                 gameDraw();
@@ -25,12 +26,15 @@ document.addEventListener("DOMContentLoaded", function(){
             }
             else{
                 this.setAttribute('id', 'incorrect');
-                wrongBtnPress();
+                if (buttonsOn){wrongBtnPress();}
+                buttonsOn=false;   
                 
             }
+        
         })
-    }
+    }   
 })
+
 //list of previous countries used as correct answers.
 // and global variables
 
@@ -288,6 +292,7 @@ function gameDraw (){
     if(img.country === drawnCountries[i].country){
      buttons[i].setAttribute('id', "correct");
     }
+    buttonsOn=true;
 }
     
 }
@@ -573,4 +578,8 @@ function resetScoreboard(){
 
 function instructionPopUp(){
     document.getElementsByClassName('inst-outer')[0].style.display='block';
+}
+function pauseInput(){
+   let buttons =  document.getElementsByClassName('answer');
+ 
 }
