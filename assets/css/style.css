@@ -222,7 +222,7 @@ body{
         font-size: 20px;
     }
 }
-@media (hover: hover) {
+@media (hover: hover) and (pointer: fine) { 
     .x:hover{
         color: #2C2C2C;
     }
@@ -232,7 +232,6 @@ body{
     #flag-area button:hover{
         box-shadow: 0 5px 5px 0 #2C2C2C;
     }
-    
   }
     
 
