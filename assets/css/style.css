@@ -262,7 +262,7 @@ button {
 /* removing hover functions on mobile */
 @media (hover: none) and (pointer: coarse){ 
     .x:hover{
-        color: none;
+        color: inherit;
     }
 
     .answer:hover{

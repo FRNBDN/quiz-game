@@ -119,13 +119,16 @@ In addition the Google DevTools have been used to test other form-factors not av
     - Fix: Adding a boolean value checking if the buttons are on hold or not, with the correct/wrong button press functions opening up the boolean after they've run.
 
 ### Unfixed Bugs
- - No known bugs has been left unsquashed.
+ - A bug where hover effects are still visible on android using google chrome, but in the chrome devtools on desktop emulating a phone, they do not appear.
 
 ### Validator Testing
 - HTML
-    - Some errors were returned from the validator, easily deletable small remnants of old code. [Validator Link](https://validator.w3.org/nu/?doc=https%3A%2F%2Ffrnbdn.github.io%2FNMMD%2Findex.html)
+    - Errors returned by the validator were:
+        - Stray closing IMG tag that was removed
+        - Empty src value for image, and it is empty in the beginning before a flag has been drawn, so it was not fixed.
+[Validator Link](https://validator.w3.org/nu/?useragent=Validator.nu%2FLV+http%3A%2F%2Fvalidator.w3.org%2Fservices&acceptlanguage=&doc=https%3A%2F%2Ffrnbdn.github.io%2Fquiz-game%2F)
 - CSS
-    - One error of old cold being present, fixed. [Validator Link](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Ffrnbdn.github.io%2FNMMD%2Findex.html&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
+    - One error of incorrect value for color, fixed. [Validator Link]https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Ffrnbdn.github.io%2Fquiz-game%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
 
 - JavaScript
 
