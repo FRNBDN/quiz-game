@@ -158,6 +158,10 @@ Live link: https://frnbdn.github.io/quiz-game/
     - For the colour palette
 - https://fonts.google.com/
     - For the fonts
+- https://favicon.io/favicon-converter/
+    - Favicon converter used
+- https://en.wikipedia.org/wiki/Vexillology
+    - Favicon taken from wikipedias Vexillology entry.
 ### List of Validators:
 - https://beautifytools.com/javascript-validator.php
 - https://esprima.org/demo/validate.html
