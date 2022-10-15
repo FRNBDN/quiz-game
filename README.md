@@ -131,9 +131,12 @@ In addition the Google DevTools have been used to test other form-factors not av
     - One error of incorrect value for color, fixed. [Validator Link]https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Ffrnbdn.github.io%2Fquiz-game%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
 
 - JavaScript
-
-- Lighthouse Performance
-![lighthouse](/assets/images/readme-imgs/lighthouse.png)
+    For JavaScript Validator I used both [Esprima](https://esprima.org/demo/validate.html) and [BeautifyTools](https://beautifytools.com/)
+    Epsrima gave no syntax errors and BeautifyTools gave errors about template literal syntax and arrow functions. The only other error is also included in the screenshot from beautify tools.
+![esprima](/assets/images/esprima.png)
+![beautifytools](/assets/images/beautifytools.png)
+- Lighthouse Testing
+![lighthouse](/assets/images/lighthouse.png)
 
 ## Development and Deployment
 
@@ -141,24 +144,29 @@ This project has been made in full on Gitpod connected to GitHub where I have re
 
 The Project is Deployed on GitHub pages.
 
-Live link: https://frnbdn.github.io/NMMD
+Live link: https://frnbdn.github.io/quiz-game/
 
 ## Credits
-### Image Sources
-- https://unsplash.com/
-    - Source of Background, Dumplings, Crossroads images.
-- https://www.max.se/var-mat/delivery/
-    - Source of the delivery options from here
-- https://commons.wikimedia.org/wiki/Main_Page
-    - Source of Picture of the noodle dishes 
-- https://guide.michelin.com/
-    - Source of the Header
+## Sources
+- https://flagpedia.net/
+    - For the flags used in the game
+- https://en.wikipedia.org/wiki/List_of_ISO_3166_country_codes
+    - For the 2 letter country codes and all UN Recognized States
 - https://fontawesome.com/
-    - For icons
-
+    - For the X icon
+- https://coolors.co/
+    - For the colour palette
+- https://fonts.google.com/
+    - For the fonts
+### List of Validators:
+- https://beautifytools.com/javascript-validator.php
+- https://esprima.org/demo/validate.html
+- https://jigsaw.w3.org/css-validator/
+- https://validator.w3.org/
+- https://ui.dev/amiresponsive
+- https://developer.chrome.com/docs/lighthouse/overview/
 ### Resources
 #### Resources that i used during the course of this project for Inspiration and Knowledge.
 - Code Institute Walkthrough and Projects
 - https://developer.mozilla.org/en-US/
-- Colt Steele Udemy Web Developer Bootcamp
 - https://stackoverflow.com/
