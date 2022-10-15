@@ -626,6 +626,7 @@ let scoresObj = {
 	tot: 0,
 };
 let attempt = 1;
+let historyLimit = 20;
 
 //Function for randomizing
 function drawRandom(maxValue) {
@@ -1340,9 +1341,12 @@ function printScore() {
                 <div>Wrong: <span class="red">${scoresObj.wrong}</span></div>
                 <div>Average: ${newperc}%</div>
             </div>`);
-		attempt++;
-	} else {
-		document.getElementById('historytext').innerText += ` Limit Reached`;
+		attempt++;	
+		if(attempt>historyLimit){
+			document.getElementById('historytext').innerText += ` Limit Reached`;
+			document.getElementById('historytext').setAttribute('class', 'red');
+
+		}
 	}
 }
 
@@ -1355,6 +1359,7 @@ function resetScoreboard() {
 	document.getElementById('total').innerText = `0/${roundLimit}`;
 	document.getElementById('average').innerText = `N/A`;
 	document.getElementById('historytext').innerText = `History`;
+	document.getElementById('historytext').removeAttribute('class', 'red');
 }
 
 function instructionPopUp() {
