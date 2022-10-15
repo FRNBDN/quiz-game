@@ -1,108 +1,161 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Flag Quiz Game
+![amiresponsive](assets/images/amiresponsive.png)
+# The purpouse of this project
+The Flag Quiz is a game that tests your knowledge of the flags of all UN memebers states in a fun and engaging way, with the scores being easily print-screenable it is easy to challenge your friends and compare scores, even over more than 20 questions!
 
-Welcome FRNBDN,
+The reasons for the creation of this website as is, it is the second project of five from The Code Institute. The requirements for project 2 is to build a website using only HTML, CSS and Javascript.
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+The websites target audience is people whom are competetive and want to show off their knowledge of flags and to which country they belong, as well as people who wish to increase their knowledge of flags and countries. It is for all ages and since the right answer shows after each round, very educational!
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
+## UX
 
-## Gitpod Reminders
+### Scope
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+#### Website Demographic
+- People who are looking for a challenge or to challenge people they know
+ in flag trivia.
+- People with some spare time to engage their brain.
+- People wanting to learn more about the flags of the world.
 
-`python3 -m http.server`
+#### Website Goals
+ - Provide an enjoyable and engaging game that also educates you about flags of the world.
+ - Providing all the necessary tools to flaunt/sheepishly share your impressive/embarresing score.
+ - Having the user feeling happy about spending their time on the website.
 
-A blue button should appear to click: _Make Public_,
+### Design
 
-Another blue button should appear to click: _Open Browser_.
+#### Basic concept
+The idea behind the design is less is more, with as few buttons as possible and distill the featues to the necessary for the goals of the website. 
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+#### Colours
+The colour palette is made to be as expressive as possible, with black and white and gray for the animations and general style, blue for undecided, green for right and red for wrong.
 
-A blue button should appear to click: _Make Public_,
+Colour Palette reference from [Coolors](https://coolors.co/).
+![Colour Palette](/assets/images/colour-palette.png)
 
-Another blue button should appear to click: _Open Browser_.
+#### Typography
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+I got the fonts I used from [FontJoy](https://fontjoy.com/). I Used "Zen Tokyo Zoo" for the logo and for the menu buttons and Heebo for body text and answer buttons as the heavily styled font mentioned before would be too much for each button, the font for the score related areas is Coiny and I picked it and the logo style to emphasize that this is a place for fun.
+These fonts are imported from [GoogleFonts](https://fonts.google.com/)
 
-To log into the Heroku toolbelt CLI:
+## Features
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+A website is one page split into a number of sections but they are all not visible at once.
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+### Header
+The header is just the logo and it is responsive, scaling down as the screen get larger and smaller.
 
-------
+### Start Screen
+The start screen is the first interactivable piece on the wesbite, it is a menu with 3 buttons:
+- Start: Starts the game as it hides the start screen div and displays the flag img in its place, along with the answer options below it.
+- Instructions: Pops up an instruction card over the rest of the website, as it fades out the background to ensure focus, it can be exited by the x on the top right.
+- Reset History: Resets the history and current score.
 
-## Release History
+![StartScreen](/assets/images/start.png)
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+### Flag Area
+- Displays the flag of the correct answer, the flags are taken from [Flagpedia](https://flagpedia.net/) and their API, where you can display the svg flags on your webstie through embeding them. 
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+![Flag](/assets/images/flagex.png)
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+### Answer Area
+The answer area is 4 different buttons and they have the following attributes:
+- They all display a random country, with one of them corresponding to the flag that is displayed.
+- On desktop they have a blue shadow effect on hover
+- When pressing a button the correct answer will turn green and if it is not the answer you pressed, your pressed answer will also turn red, to show that your answer was wrong.
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+![hoverex](/assets/images/hover.png) 
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+![feedback](/assets/images/feedback.png)
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+### Score area
+- score area updates in real-time so you can see how you are doing, the round limit and how many rounds played
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+![score](/assets/images/start.png)
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+### History
+- History shows you the scores of your previous rounds, when the history list is full it will say so in the header and will not accept any more entries untill the button "Reset History" has been pressed or the website has been reloaded.
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+The history is displaying the most recent round first when the history section is below the gameboard, but the opposite way when it is on the right of the gameboard on desktop width screns to accomodate the different expectations on the different formfactors.
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+![history](/assets/images/historylimit.png)
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+### Features Left to Implement
+- Highscore leaderboard that persists
+- Alternate game modes ex:
+    - Quick fire with answering as many questions as possible.
+    - Having a timelimit per question to limit decision making time.
+    - Extra hard where you get no answer options and you have to type the answer.
+- Letting the player decide the round limit themselves.
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+## Technologies used
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+- [HTML](https://en.wikipedia.org/wiki/HTML)
+- [CSS](https://en.wikipedia.org/wiki/CSS)
+- [JavaScript](https://en.wikipedia.org/wiki/JavaScript)
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+## Testing
+In addition the Google DevTools have been used to test other form-factors not available to me during this project.
 
-------
+### Tests Executed
+- Screen Resize
+    - Tested the programs responsiveness by resizing the screen between 1920px width and ~200px width and it is working as expected
+- Buttons behaviour
+    - Tested all the buttons to ensure that they do what is expected, for example, the start button starting a fresh round, the reset history removing all historical info, instructions button displaying the instructions and the answer buttons accurately showing if the answer is correct or not.
+    - All buttons work as expected
+- Button secondary behaviours check
+    - Test secondary behaviour such as giving the proper feedback on the different devices and ensure that a multiclick doesnt result in extra scores being recorded.
+    - all of it work as expected.
+- History orientating check
+    - History is adding to the order correctly for both positions.
 
-## FAQ about the uptime script
 
-**Why have you added this script?**
+### List of bugs squashed.
+- Countries that have already been the correct answer continued to show up in the answers.
+    - Reason: Found that I had not included the index of the thing I wished to remove in the slice function, so it removed the first item on the list of available countries istead.
+    - Fix: Added the index of the object I wished to remove.
+- Doubleclicking an answer resulted in the score being recorded twice.
+    - Fix: Adding a boolean value checking if the buttons are on hold or not, with the correct/wrong button press functions opening up the boolean after they've run.
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
+### Unfixed Bugs
+ - No known bugs has been left unsquashed.
 
-**How will this affect me?**
+### Validator Testing
+- HTML
+    - Some errors were returned from the validator, easily deletable small remnants of old code. [Validator Link](https://validator.w3.org/nu/?doc=https%3A%2F%2Ffrnbdn.github.io%2FNMMD%2Findex.html)
+- CSS
+    - One error of old cold being present, fixed. [Validator Link](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Ffrnbdn.github.io%2FNMMD%2Findex.html&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
+- JavaScript
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
+- Lighthouse Performance
+![lighthouse](/assets/images/readme-imgs/lighthouse.png)
 
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
+## Development and Deployment
 
-**So….?**
+This project has been made in full on Gitpod connected to GitHub where I have regularly been performing commits and pushes. The repo was started off with a template by the Code Institute. 
 
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
+The Project is Deployed on GitHub pages.
 
-**Can I opt out?**
+Live link: https://frnbdn.github.io/NMMD
 
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
+## Credits
+### Image Sources
+- https://unsplash.com/
+    - Source of Background, Dumplings, Crossroads images.
+- https://www.max.se/var-mat/delivery/
+    - Source of the delivery options from here
+- https://commons.wikimedia.org/wiki/Main_Page
+    - Source of Picture of the noodle dishes 
+- https://guide.michelin.com/
+    - Source of the Header
+- https://fontawesome.com/
+    - For icons
 
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
-
-**Anything more?**
-
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
-
----
-
-Happy coding!
+### Resources
+#### Resources that i used during the course of this project for Inspiration and Knowledge.
+- Code Institute Walkthrough and Projects
+- https://developer.mozilla.org/en-US/
+- Colt Steele Udemy Web Developer Bootcamp
+- https://stackoverflow.com/

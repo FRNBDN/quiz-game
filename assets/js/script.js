@@ -566,7 +566,7 @@ function printScore(){
         attempt ++;
     }
     else{
-        document.getElementById('history').innerHTML = `<h2>History Limit Reached, Reset To Store More!</h2>`
+        document.getElementById('historytext').innerText += ` Limit Reached`
     }
 }
 function resetScoreboard(){
@@ -577,7 +577,7 @@ function resetScoreboard(){
     document.getElementById('wrong').innerText= `0`;
     document.getElementById('total').innerText= `0/${roundLimit}`;
     document.getElementById('average').innerText= `N/A`;
-    document.getElementById('history').innerHTML = `<h2>History</h2>`;
+    document.getElementById('historytext').innerText = `History`;
 }
 
 function instructionPopUp(){

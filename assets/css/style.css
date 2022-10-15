@@ -226,6 +226,14 @@ button {
 }
 
 /* Responsiveness screen breakpoints*/
+@media (max-width:320px){
+    #logo{
+        font-size: 30px;
+    }
+    #start-screen>button{
+        font-size: 20px;
+    }
+}
 @media (min-width: 700px) {
     .container{
         max-width: 1000px;
