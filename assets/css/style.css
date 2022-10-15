@@ -6,6 +6,15 @@
     border:none;
     text-decoration: none;
   }
+
+  body{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+}
+
 /*Main Container*/
 .container{
     background-color: #FFFFFF;
@@ -23,8 +32,8 @@
     text-align: center;
     font-size: 55px;
 }
-/*game board styles*/
 
+/*game board styles*/
 #flag-area{
     width: 100%;
     min-height: 260px;
@@ -57,15 +66,16 @@
 
 /* buttons */
 button {
-font-family: 'Heebo', sans-serif;
-height: 30%;
-width: 45%;
-border-radius: 10px;
-margin: 1%;
+    font-family: 'Heebo', sans-serif;
+    height: 30%;
+    width: 45%;
+    border-radius: 10px;
+    margin: 1%;
 
-background-color: #FFFFFF;
-box-shadow: 0 5px 5px 0 #DCDCDC;
+    background-color: #FFFFFF;
+    box-shadow: 0 5px 5px 0 #DCDCDC;
 }
+
 #start-screen>button{
     font-family: 'Zen Tokyo Zoo', sans-serif;
     width: 100%;
@@ -84,7 +94,7 @@ box-shadow: 0 5px 5px 0 #DCDCDC;
 }
 
 
-/*score stats styling*/
+/*score stats history styling*/
 .score-area {
     width: 100%;
     display: flex;
@@ -92,6 +102,7 @@ box-shadow: 0 5px 5px 0 #DCDCDC;
     flex-direction: row;
     justify-content: space-evenly;
 }
+
 .scores, #prev-scores, #history{
     width:33%;
     width: 100%;
@@ -102,25 +113,29 @@ box-shadow: 0 5px 5px 0 #DCDCDC;
     justify-content: space-evenly;
     flex-direction: column;
 }
+
 .scores{
     flex-direction: column;
     align-items: center;
 }
+
 #prev-scores{
     flex-direction: column-reverse;
     align-items: stretch;
 }
+
 #history h2{
     font-size: 20px;
     width: 100%;
     border-bottom: #DCDCDC 1px solid;
     padding-left: 10px;
 }
+
 .scores span{
     font-size: 20px;
 }
-/*stats numbers*/
 
+/*stats numbers*/
 #start-screen{
     width: 100%;
     height: 320px;
@@ -131,21 +146,25 @@ box-shadow: 0 5px 5px 0 #DCDCDC;
     justify-content: center;
     background-color: #DCDCDC;
     padding: 1px 0px;
-    align-content: center;
-    
+    align-content: center; 
 }
+
 #prev-scores .s-line {
     border-bottom: #DCDCDC 1px solid;
     display: flex;
     justify-content: space-between;
     margin: 0px 1%;
 }
+/* Text coloring */
 .red{
     color: #D62A2A;
 }
+
 .green{
     color: #40D629;
 }
+
+/* instruction popup style */
 .inst-outer{
     display: none;
     position: absolute;
@@ -155,6 +174,7 @@ box-shadow: 0 5px 5px 0 #DCDCDC;
     height: 100%;
     background: #dcdcdc87;
 }
+
 .instructions{
     font-family: 'Heebo', sans-serif;
     box-sizing: border-box;
@@ -164,10 +184,12 @@ box-shadow: 0 5px 5px 0 #DCDCDC;
     margin-top: 20%;
     padding: 1%;
 }
+
 .instructions h2, .instructions span{
     font-family: 'Zen Tokyo Zoo', sans-serif;
     font-weight: 100;
 }
+
 .instructions span{
     border: #DCDCDC 1px solid;
     border-radius: 5px;
@@ -190,14 +212,20 @@ box-shadow: 0 5px 5px 0 #DCDCDC;
     box-shadow: none;
 }
 
-body{
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: center;
-    align-items: flex-start;
+/* Hover effects */
+.x:hover{
+    color: #2C2C2C;
 }
 
+.answer:hover{
+    box-shadow: 0 5px 5px 0 #8ce1f6;
+}
+
+#flag-area button:hover{
+    box-shadow: 0 5px 5px 0 #2C2C2C;
+}
+
+/* Responsiveness screen breakpoints*/
 @media (min-width: 700px) {
     .container{
         max-width: 1000px;
@@ -222,15 +250,19 @@ body{
         font-size: 20px;
     }
 }
+
+/* removing hover functions on mobile */
 @media (hover: none) and (pointer: coarse){ 
     .x:hover{
-        color: #2C2C2C;
+        color: none;
     }
+
     .answer:hover{
-        box-shadow: 0 5px 5px 0 #8ce1f6;
+        box-shadow: none;
     }
+
     #flag-area button:hover{
-        box-shadow: 0 5px 5px 0 #2C2C2C;
+        box-shadow: none;
     }
   }
     
