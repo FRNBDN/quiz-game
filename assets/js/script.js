@@ -283,7 +283,7 @@ function gameDraw (){
 function countryCheck(){
     let answerOptions = countryPicker();
     let correctAnswer = drawRandom(4);
-    countryList.splice(answerOptions[correctAnswer], 1);
+    countryList.splice(answerOptions[correctAnswer].id, 1);
     answerOptions[correctAnswer].corr = 1; 
     return answerOptions;
 }
