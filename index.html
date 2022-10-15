@@ -1,70 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <title>Document</title>
-</head>
-<body>
-    <div class="container">
-        
-        <h1 id="logo">FLAG QUIZ</h1>
-        <div id="flag-area">
-            <div id="start-screen">
-                <button id="start">START</button>
-                <button id="instructions">INSTRUCTIONS</button>
-                <button id="reset">RESET HISTORY</button>
-            </div>
-            <img id="flag-img" src="" alt="Flag Image"></img>
-        </div>
-        <div id="answer-container">
-            <button class="answer"></button>
-            <button class="answer"></button>
-            <button class="answer"></button>
-            <button class="answer"></button>
-        </div>
-        <div class="score-area">
-            <p class="scores">Right Answer:<span class="score green" id="right">0</span></p>
-            <p class="scores">Wrong Answer: <span class="score red" id="wrong">0</span></p>
-            <p class="scores">Average:<span id="average">N/A</span></p>
-            <p class="scores">Total Guesses: <span class="score" id="total">0/20</span></p>
-        </div>
-        <div class="inst-outer">
-            <div class="instructions">
-            <button class="x"><i class="fa-solid fa-xmark"></i></button>
-            <h2>INSTRUCTIONS</h2> 
-            <h3>General</h3>
-                <p>
-                    Guess which country the flag belongs to out of the four options presented, 
-                    you will get 20 randomised flags and the goal is to get as many correct
-                    as possible. The flags that have been played in a previous round may
-                    be played again in the next.
-                </p><br>
-                <p>
-                    Flags included in this list are the 193 United Nations member states.
-                </p><br>
-            <h3>Score history</h3>
-                <p>
-                    The score of your first 20 rounds of the game will be displayed in the score history 
-                    table. It can be reset at any time inbetween rounds.
-                </p>
-                <br>
-            <h3>Buttons</h3>
-                <p><span>START</span> Starts the game.</p>
-                <p><span>RESET HISTORY</span> Resets the history and current scores.</p>
-                <br>
-            </div>
-        </div>
-    </div>
-    <div id="history">
-        <h2>History</h2>
-    <div id="prev-scores">
-    </div>
-    </div>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="assets/css/style.css">
+        <title>Document</title>
+    </head>
 
-    <script src="assets/js/script.js"></script>
-    <script src="https://kit.fontawesome.com/f4cdc29b9e.js" crossorigin="anonymous"></script>
-</body>
+    <body>
+        <!--container contains eveyrthing except for score history
+            as the container and the score history will be side by side
+            on big screens.-->
+        <div class="container">
+            <h1 id="logo">FLAG QUIZ</h1>
+
+            <!--Flag area is the area that displays the flag when game is going
+                and the start screen when it is not.-->
+            <div id="flag-area">
+                <div id="start-screen">
+                    <button id="start">START</button>
+                    <button id="instructions">INSTRUCTIONS</button>
+                    <button id="reset">RESET HISTORY</button>
+                </div>
+
+                <img id="flag-img" src="" alt="Flag Image"></img>
+            </div>
+            <!--Area for answers-->
+            <div id="answer-container">
+                <button class="answer"></button>
+                <button class="answer"></button>
+                <button class="answer"></button>
+                <button class="answer"></button>
+            </div>
+
+            <!--area for current scores, displayed at bottom-->
+            <div class="score-area">
+                <p class="scores">Right Answer:<span class="score green" id="right">0</span></p>
+                <p class="scores">Wrong Answer: <span class="score red" id="wrong">0</span></p>
+                <p class="scores">Average:<span id="average">N/A</span></p>
+                <p class="scores">Total Guesses: <span class="score" id="total">0/20</span></p>
+            </div>
+
+            <!--instructions popup that covers screen-->
+            <div class="inst-outer">
+                <div class="instructions">
+                <button class="x"><i class="fa-solid fa-xmark"></i></button>
+                <h2>INSTRUCTIONS</h2> 
+                <h3>General</h3>
+                    <p>
+                        Guess which country the flag belongs to out of the four options presented, 
+                        you will get 20 randomised flags and the goal is to get as many correct
+                        as possible. The flags that have been played in a previous round may
+                        be played again in the next.
+                    </p>
+                    <br>
+                    <p>
+                        Flags included in this list are the 193 United Nations member states.
+                    </p>
+                    <br>
+                <h3>Score history</h3>
+                    <p>
+                        The score of your first 20 rounds of the game will be displayed in the score history 
+                        table. It can be reset at any time inbetween rounds.
+                    </p>
+                    <br>
+                <h3>Buttons</h3>
+                    <p><span>START</span> Starts the game.</p>
+                    <p><span>RESET HISTORY</span> Resets the history and current scores.</p>
+                    <br>
+                </div>
+            </div>
+        </div>
+        <!--area for score history, is outside of the main container.-->
+        <div id="history">
+            <h2>History</h2>
+        <div id="prev-scores">
+        </div>
+        </div>
+
+        <script src="assets/js/script.js"></script>
+        <script src="https://kit.fontawesome.com/f4cdc29b9e.js" crossorigin="anonymous"></script>
+    </body>
 </html>
